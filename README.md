@@ -4,7 +4,7 @@ The code is built on top of the publicly available code of PowerSGD (https://git
 
 ### Training ResNet18 on Cifar-10 dataset
 
-An example of the slurm script can be:
+An example of the slurm script is:
 
 ```
 #!/bin/bash --login
@@ -29,7 +29,7 @@ mpirun --np $SLURM_NTASKS python train_intsgd_resnet18.py
 
 ### Training a 3-layer LSTM on Wikitext-2 dataset
 
-An example of the slurm script can be:
+An example of the slurm script is:
 
 ```
 #!/bin/bash --login
