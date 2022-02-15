@@ -51,3 +51,15 @@ module load pytorch
 
 mpirun --np $SLURM_NTASKS python train_intsgd_rand_lstm.py
 ```
+
+## How to cite
+If you find our work useful, please consider citing [our paper](https://openreview.net/forum?id=pFyXqxChZc)  
+```
+@inproceedings{mishchenko2022intsgd,
+    title={{IntSGD}: Adaptive Floatless Compression of Stochastic Gradients},
+    author={Mishchenko, Konstantin and Wang, Bokun and Kovalev, Dmitry and Richt{\'a}rik, Peter},
+    journal={International Conference on Learning Representations},
+    year={2022},
+    url={https://openreview.net/forum?id=pFyXqxChZc}
+}
+```
