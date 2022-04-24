@@ -537,9 +537,9 @@ class HintQuantReducer(Reducer):
             flat_values = TensorBuffer(grad_in)
 
         with self.timer("reduce.profiling", verbosity=2):
-            abs_max_val = torch.abs(torch.max(flat_values.buffer))
-            torch.distributed.all_reduce(abs_max_val, op=torch.distributed.reduce_op.MAX)
-            exponent = torch.floor(torch.log2(abs_max_val)).item()
+            max_abs_val = torch.max(torch.abs(flat_values.buffer))
+            torch.distributed.all_reduce(max_abs_val, op=torch.distributed.reduce_op.MAX)
+            exponent = torch.floor(torch.log2(max_abs_val)).item()
             if self.int8:
                 self.alpha = (2 ** 7 - 1.0) / (n_workers * (2 ** exponent))
             else:
